@@ -1,0 +1,80 @@
+doctype 5
+html
+  head
+  title Tournament of Books Tournament of Checklist
+
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  link(rel="stylesheet", href="css/bootstrap-responsive.css")
+  link(rel="stylesheet", href="css/bootstrap.css", media="screen")
+
+  style(type="text/css")
+    /* Custom container */
+    .container-narrow {
+      margin: 0 auto;
+      max-width: 700px;
+    }
+
+    /* Bootstrap Overrides */
+    .checkbox {
+      padding-left: 30px;
+    }
+    li > .checkbox input[type="checkbox"] {
+      margin-top: 9px;
+    }
+
+    a {
+      float: right;
+    }
+    input[type="checkbox"]:checked + p {
+      text-decoration: line-through;
+    }
+    h1 {
+      margin: 30px 0;
+      text-align: center;
+    }
+    li > label {
+      line-height: 30px;
+    }
+    li {
+      clear: both;
+      height: 30px;
+      line-height: 30px;
+      padding-right: 10px;
+    }
+    li:nth-child(even) {
+      background: #eee;
+    }
+    p {
+      float: left;
+      margin: 0;
+    }
+    ul {
+      margin: 0 auto 40px;
+      list-style-type: none;
+      width: 400px;
+    }
+
+
+body
+  h1 Tournament of Books 2013 Checklist
+  div#main.container-narrow
+    ul
+      for item in list
+        include book
+    div#login
+      h2 Login
+      form.form-horizontal(action="/login", method="post")
+        div.control-group
+          label.control-label(for="inputEmail") Email
+          div.controls
+            input#inputEmail(type="email", placeholder="type your email here", required)
+        div.control-group
+          label.control-label(for="inputPassword") Password
+          div.controls
+            input#inputPassword(type="password", placeholder="don't use your bank password")
+        div.control-group
+          div.controls
+            label.checkbox Remember me
+              input(type="checkbox")
+            button.btn(type="submit") Sign in
+
