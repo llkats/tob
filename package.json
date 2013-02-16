@@ -7,6 +7,6 @@
     "express": "3.x",
     "jade": "*",
     "passport-local": "0.1.x",
-    "redis": "0.8.x"
+    "mongodb" : "> 1.1.10"
   }
 }
