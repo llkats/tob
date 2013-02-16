@@ -61,36 +61,4 @@ body
     ul
       for item in list
         include book
-    div#login
-      h2 Login
-      form.form-horizontal(action="/login", method="post")
-        div.control-group
-          label.control-label(for="inputEmail") Email
-          div.controls
-            input#inputEmail(type="email", placeholder="type your email here", required)
-        div.control-group
-          label.control-label(for="inputPassword") Password
-          div.controls
-            input#inputPassword(type="password", placeholder="don't use your bank password")
-        div.control-group
-          div.controls
-            label.checkbox Remember me
-              input(type="checkbox")
-            button.btn(type="submit") Sign in
-    div#signup
-      h2 Signup
-      form.form-horizontal(action="/signup", method="post")
-        div.control-group
-          label.control-label(for="signupEmail") Email
-          div.controls
-            input#inputEmail(type="email", name="signup[email]", placeholder="type your email here", required)
-        div.control-group
-          label.control-label(for="signupPassword") Password
-          div.controls
-            input#inputPassword(type="password", name="signup[password]", placeholder="don't use your bank password")
-        div.control-group
-          div.controls
-            label.checkbox Remember me
-              input(type="checkbox")
-            button.btn(type="submit") Sign in
 
