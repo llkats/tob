@@ -78,18 +78,8 @@ var simple = { "hi" : "one"};
 app.get('/', function(req, res) {
 
   res.render('index', {list: list});
-  // res.send(list);
-});
 
-app.post('/signup', function(req, res) {
-  console.log(req.body.signup.email);
-  console.log(req.body.signup.password);
-});
-
-app.post('/login', function(req, res) {
-  console.log(req);
 });
 
 var port = process.env.PORT || 3000;
 app.listen(port);
-app.listen(3000);
