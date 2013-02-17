@@ -6,7 +6,7 @@
   "dependencies": {
     "express": "3.x",
     "jade": "*",
-    "passport-local": "0.1.x",
+    "passport-local": "0.1.x"
   },
   "engines": {
     "node": "0.8.x",
