@@ -92,3 +92,4 @@ app.post('/login', function(req, res) {
 
 var port = process.env.PORT || 3000;
 app.listen(port);
+app.listen(3000);
