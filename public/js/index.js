@@ -12,8 +12,35 @@ $(function() {
       $(inp).prop('checked', true);
     }
 
+  } else {
+
+    // if there's nothing in localstorage, check the url
+    var hash = window.location.hash,
+        hasharray = hash.slice(1, hash.length).split("+");
+
+    for (var j = 0; j < hasharray.length; j++) {
+      var inpu = $('input').get(hasharray[j]);
+      localbooks.push(hasharray[j]);  // push the url indexes to localstorage
+      $(inpu).prop('checked', true);
+    }
+
   }
 
+  // reads the array of selected books and appended them to the url
+  var hashChange = function(bookarray) {
+
+    var loc = window.location,
+        hashstring = bookarray[0];
+
+    for (var i = 1; i < bookarray.length; i++) {
+      hashstring += "+" + bookarray[i];
+    }
+
+    loc.hash = hashstring;
+
+  };
+
+  // checkbox event handler
   $('ul').on('change', 'input:checkbox', function(e) {
 
     var li = $(this).parents('li'),
@@ -36,6 +63,8 @@ $(function() {
       }
 
     }
+
+    hashChange(localbooks);
 
     localStorage.books = JSON.stringify(localbooks);
 
